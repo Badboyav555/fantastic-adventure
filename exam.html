@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Exam Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">Learn<span>Loop</span></a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="challenge.html">Challenge</a>
+                <a href="exam.html">Exam</a>
+                <a href="progress.html">Progress</a>
+                <div class="profile-wrapper">
+                    <div class="profile-circle" id="profileCircle" onclick="toggleProfileMenu()">S</div>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="progress.html">My Progress</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Exam Body -->
+    <div class="exam-body">
+        <div class="container">
+            <p class="small-heading">EXAM MODE</p>
+            <h1 class="page-title">Exam Preparation</h1>
+            <p class="page-subtitle">Track your readiness and revise smart</p>
+
+            <!-- Subject Selection -->
+            <div class="subject-tabs">
+                <button class="subject-tab selected" onclick="selectExamSubject(this)">Math</button>
+                <button class="subject-tab" onclick="selectExamSubject(this)">Physics</button>
+                <button class="subject-tab" onclick="selectExamSubject(this)">Programming</button>
+            </div>
+
+            <!-- Preparation Overview -->
+            <div class="prep-overview">
+                <div class="prep-card">
+                    <div class="prep-value">72%</div>
+                    <div class="prep-label">Overall Preparation</div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-value">8/12</div>
+                    <div class="prep-label">Topics Completed</div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-value">4</div>
+                    <div class="prep-label">Revision Needed</div>
+                </div>
+            </div>
+
+            <!-- Important Topics -->
+            <div class="exam-section">
+                <h2 class="section-title">Important Topics</h2>
+                <div class="important-topics">
+                    <div class="topic-item">
+                        <div class="topic-item-left">
+                            <span class="priority-dot high"></span>
+                            <span class="topic-item-name">Matrices & Determinants</span>
+                        </div>
+                        <span class="topic-item-priority">High Priority</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-item-left">
+                            <span class="priority-dot high"></span>
+                            <span class="topic-item-name">Eigenvalues & Eigenvectors</span>
+                        </div>
+                        <span class="topic-item-priority">High Priority</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-item-left">
+                            <span class="priority-dot medium"></span>
+                            <span class="topic-item-name">Calculus - Integration</span>
+                        </div>
+                        <span class="topic-item-priority">Medium Priority</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-item-left">
+                            <span class="priority-dot medium"></span>
+                            <span class="topic-item-name">Newton's Laws of Motion</span>
+                        </div>
+                        <span class="topic-item-priority">Medium Priority</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-item-left">
+                            <span class="priority-dot low"></span>
+                            <span class="topic-item-name">Arrays & Data Structures</span>
+                        </div>
+                        <span class="topic-item-priority">Low Priority</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="topic-item-left">
+                            <span class="priority-dot low"></span>
+                            <span class="topic-item-name">Functions & Recursion</span>
+                        </div>
+                        <span class="topic-item-priority">Low Priority</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Revision Plan -->
+            <div class="exam-section">
+                <h2 class="section-title">Smart Revision Plan</h2>
+                <div class="revision-plan">
+                    <div class="revision-card">
+                        <div class="revision-day">📅 Today</div>
+                        <h3>Matrices & Eigenvalues</h3>
+                        <p>Review determinant formulas, practice 10 problems on eigenvalue computation.</p>
+                    </div>
+                    <div class="revision-card">
+                        <div class="revision-day">📅 Tomorrow</div>
+                        <h3>Calculus & Integration</h3>
+                        <p>Practice integration by parts, solve 5 previous year questions.</p>
+                    </div>
+                    <div class="revision-card">
+                        <div class="revision-day">📅 Next</div>
+                        <h3>Physics & Programming</h3>
+                        <p>Revise Newton's laws, practice array problems and function implementations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Revision Button -->
+            <div style="text-align:center; margin-top:32px;">
+                <button class="primary-btn" onclick="openRevision()">📝 Quick Revision</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revision Popup -->
+    <div class="learn-popup" id="revisionPopup" style="display:none;">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>📝 Quick Revision</h3>
+                <button class="close-btn" onclick="closeRevisionPopup()">×</button>
+            </div>
+            <div class="revision-tabs">
+                <button class="revision-tab active" data-tab="formulas" onclick="showRevisionTab('formulas')">Formulas</button>
+                <button class="revision-tab" data-tab="concepts" onclick="showRevisionTab('concepts')">Concepts</button>
+                <button class="revision-tab" data-tab="mistakes" onclick="showRevisionTab('mistakes')">Mistakes</button>
+            </div>
+            <div class="revision-content">
+                <div class="revision-tab-content" id="tab-formulas">
+                    <p>📐 det([[a,b],[c,d]]) = ad - bc</p>
+                    <p>📐 A⁻¹ = (1/det(A)) × adj(A)</p>
+                    <p>📊 Av = λv (Eigenvalue equation)</p>
+                    <p>📊 det(A - λI) = 0 (Characteristic equation)</p>
+                    <p>∫ d/dx(xⁿ) = nxⁿ⁻¹ (Power Rule)</p>
+                    <p>∫ ∫xⁿ dx = xⁿ⁺¹/(n+1) + C</p>
+                    <p>🍎 F = ma (Newton's Second Law)</p>
+                    <p>🍎 p = mv (Momentum)</p>
+                    <p>💻 Array access: O(1), Binary search: O(log n)</p>
+                </div>
+                <div class="revision-tab-content" id="tab-concepts" style="display:none;">
+                    <p>Matrix multiplication is NOT commutative (AB ≠ BA)</p>
+                    <p>Eigenvalues come from the characteristic equation det(A - λI) = 0</p>
+                    <p>Sum of eigenvalues = trace of matrix</p>
+                    <p>Product of eigenvalues = determinant of matrix</p>
+                    <p>Derivatives measure instantaneous rate of change</p>
+                    <p>Integrals measure accumulated area under a curve</p>
+                    <p>Newton's 3rd Law: Every action has equal & opposite reaction</p>
+                    <p>Arrays store elements in contiguous memory</p>
+                    <p>Functions enable code reuse and modularity</p>
+                </div>
+                <div class="revision-tab-content" id="tab-mistakes" style="display:none;">
+                    <p>❌ Forgetting to check if det(A) = 0 before finding inverse</p>
+                    <p>❌ Confusing row index with column index in matrices</p>
+                    <p>❌ Forgetting the constant of integration (+C)</p>
+                    <p>❌ Not applying chain rule in composite functions</p>
+                    <p>❌ Mixing up mass and weight (W = mg, not m = W)</p>
+                    <p>❌ Forgetting that action-reaction forces act on different objects</p>
+                    <p>❌ Array index out of bounds (remember: 0 to n-1)</p>
+                    <p>❌ Missing base case in recursive functions</p>
+                    <p>❌ Confusing pass-by-value with pass-by-reference</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
