@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - My Progress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">Learn<span>Loop</span></a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="challenge.html">Challenge</a>
+                <a href="exam.html">Exam</a>
+                <a href="progress.html">Progress</a>
+                <div class="profile-wrapper">
+                    <div class="profile-circle" id="profileCircle" onclick="toggleProfileMenu()">S</div>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="progress.html">My Progress</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Body -->
+    <div class="progress-body">
+        <div class="container">
+            <p class="small-heading">YOUR JOURNEY</p>
+            <h1 class="page-title">Progress Tracker</h1>
+            <p class="page-subtitle">Track your learning journey and celebrate achievements</p>
+
+            <!-- Overall Progress -->
+            <div class="progress-section">
+                <div class="progress-overview">
+                    <div class="progress-circle">
+                        <span>72%</span>
+                    </div>
+                    <div class="progress-overview-stats">
+                        <div class="overview-stat">
+                            <div class="overview-stat-value" id="progressLessons">12</div>
+                            <div class="overview-stat-label">Lessons</div>
+                        </div>
+                        <div class="overview-stat">
+                            <div class="overview-stat-value" id="progressAccuracy">0%</div>
+                            <div class="overview-stat-label">Accuracy</div>
+                        </div>
+                        <div class="overview-stat">
+                            <div class="overview-stat-value" id="progressStreak">1</div>
+                            <div class="overview-stat-label">Day Streak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject-wise Progress -->
+            <div class="progress-section">
+                <h2 class="section-title">Subject-wise Progress</h2>
+                <div class="subject-progress">
+                    <div class="subject-progress-item">
+                        <div class="subject-progress-header">
+                            <span>📐 Mathematics</span>
+                            <span>72%</span>
+                        </div>
+                        <div class="subject-progress-bar">
+                            <div class="subject-progress-fill" style="width:72%;"></div>
+                        </div>
+                    </div>
+                    <div class="subject-progress-item">
+                        <div class="subject-progress-header">
+                            <span>⚡ Physics</span>
+                            <span>81%</span>
+                        </div>
+                        <div class="subject-progress-bar">
+                            <div class="subject-progress-fill" style="width:81%;"></div>
+                        </div>
+                    </div>
+                    <div class="subject-progress-item">
+                        <div class="subject-progress-header">
+                            <span>💻 Programming</span>
+                            <span>64%</span>
+                        </div>
+                        <div class="subject-progress-bar">
+                            <div class="subject-progress-fill" style="width:64%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="progress-section">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">🔥</div>
+                        <h3>7 Day Streak</h3>
+                        <div class="achievement-status">Locked</div>
+                    </div>
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">🎯</div>
+                        <h3>Quiz Master</h3>
+                        <div class="achievement-status">Locked</div>
+                    </div>
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">📚</div>
+                        <h3>First 10 Lessons</h3>
+                        <div class="achievement-status">Locked</div>
+                    </div>
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>30 Day Legend</h3>
+                        <div class="achievement-status">Locked</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
