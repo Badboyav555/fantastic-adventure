@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">Learn<span>Loop</span></a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="challenge.html">Challenge</a>
+                <a href="exam.html">Exam</a>
+                <a href="progress.html">Progress</a>
+                <div class="profile-wrapper">
+                    <div class="profile-circle" id="profileCircle" onclick="toggleProfileMenu()">S</div>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="progress.html">My Progress</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Body -->
+    <div class="dashboard-body">
+        <div class="container">
+            <!-- Welcome -->
+            <div class="welcome-section">
+                <h1 class="page-title">Good Morning, <span id="studentName">Student</span> 👋</h1>
+                <p>Ready to learn something new today?</p>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="dashboard-left">
+                    <!-- Stats -->
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-info">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Lessons Completed</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="accuracyStat">0%</span>
+                                <span class="stat-label">Quiz Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🔥</div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="streakStat">1</span>
+                                <span class="stat-label">Day Streak</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue Learning -->
+                    <div class="card continue-learning-card">
+                        <p class="small-heading">CONTINUE LEARNING</p>
+                        <h3 style="margin-top:8px;">Engineering Mathematics</h3>
+                        <p class="subject-name">Topic: Matrices</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                        <a href="learn.html" class="primary-btn">Continue →</a>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="dashboard-right">
+                    <!-- Daily Challenge -->
+                    <div class="daily-challenge-card">
+                        <p class="small-heading" style="color:rgba(255,255,255,0.8);">DAILY CHALLENGE</p>
+                        <h3 style="margin-top:8px;">Ready for today's quiz?</h3>
+                        <p>Complete 5 questions across mixed subjects to maintain your streak and earn points!</p>
+                        <a href="challenge.html" class="primary-btn">Start Challenge →</a>
+                    </div>
+
+                    <!-- AI Recommendation -->
+                    <div class="card ai-recommendation-card">
+                        <p class="small-heading">AI RECOMMENDATION</p>
+                        <h3 style="margin-top:8px;">Focus on Eigenvalues</h3>
+                        <p>Based on your recent progress, we recommend reviewing eigenvalues and eigenvectors today.</p>
+                        <a href="ai.html" class="secondary-btn">Ask AI →</a>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-action-buttons">
+                            <a href="learn.html" class="secondary-btn">📖 Learn</a>
+                            <a href="challenge.html" class="secondary-btn">⚡ Quiz</a>
+                            <a href="ai.html" class="secondary-btn">🤖 Ask AI</a>
+                            <a href="exam.html" class="secondary-btn">📝 Exam</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
