@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Learn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">Learn<span>Loop</span></a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="challenge.html">Challenge</a>
+                <a href="exam.html">Exam</a>
+                <a href="progress.html">Progress</a>
+                <div class="profile-wrapper">
+                    <div class="profile-circle" id="profileCircle" onclick="toggleProfileMenu()">S</div>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="progress.html">My Progress</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Learn Body -->
+    <div class="learn-body">
+        <div class="container">
+            <p class="small-heading">EXPLORE</p>
+            <h1 class="page-title">Learn</h1>
+            <p class="page-subtitle">Browse subjects and dive into topics</p>
+
+            <!-- Subject Grid -->
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="subject-icon">📐</div>
+                    <h3>Mathematics</h3>
+                    <p>12 topics • 8 completed</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 67%;"></div>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon">⚡</div>
+                    <h3>Physics</h3>
+                    <p>10 topics • 8 completed</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon">💻</div>
+                    <h3>Programming</h3>
+                    <p>15 topics • 10 completed</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 67%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topics Section -->
+            <div class="exam-section">
+                <h2 class="section-title">Topics</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h3>📐 Matrices</h3>
+                        <p>Learn about matrix operations, determinants, and inverses.</p>
+                        <div class="topic-actions">
+                            <button class="secondary-btn" onclick="openLearning('Matrices')">Learn</button>
+                            <button class="secondary-btn" onclick="openNotes('Matrices')">Notes</button>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <h3>📊 Eigenvalues</h3>
+                        <p>Understand eigenvalues, eigenvectors, and their applications.</p>
+                        <div class="topic-actions">
+                            <button class="secondary-btn" onclick="openLearning('Eigenvalues')">Learn</button>
+                            <button class="secondary-btn" onclick="openNotes('Eigenvalues')">Notes</button>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <h3>∫ Calculus</h3>
+                        <p>Master derivatives, integrals, and their applications.</p>
+                        <div class="topic-actions">
+                            <button class="secondary-btn" onclick="openLearning('Calculus')">Learn</button>
+                            <button class="secondary-btn" onclick="openNotes('Calculus')">Notes</button>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <h3>🍎 Newton's Laws</h3>
+                        <p>Learn the three laws of motion and their applications.</p>
+                        <div class="topic-actions">
+                            <button class="secondary-btn" onclick="openLearning('Newton\'s Laws')">Learn</button>
+                            <button class="secondary-btn" onclick="openNotes('Newton\'s Laws')">Notes</button>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <h3>📋 Arrays</h3>
+                        <p>Understand arrays, indexing, and common operations.</p>
+                        <div class="topic-actions">
+                            <button class="secondary-btn" onclick="openLearning('Arrays')">Learn</button>
+                            <button class="secondary-btn" onclick="openNotes('Arrays')">Notes</button>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <h3>⚡ Functions</h3>
+                        <p>Learn about functions, parameters, and return values.</p>
+                        <div class="topic-actions">
+                            <button class="secondary-btn" onclick="openLearning('Functions')">Learn</button>
+                            <button class="secondary-btn" onclick="openNotes('Functions')">Notes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learn Popup -->
+    <div class="learn-popup" id="learnPopup" style="display:none;">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 id="popupTitle"></h3>
+                <button class="close-btn" onclick="closePopup()">×</button>
+            </div>
+            <div class="popup-body" id="popupBody"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
