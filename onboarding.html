@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Setup Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Learn<span>Loop</span></a>
+        </div>
+    </nav>
+
+    <!-- Onboarding -->
+    <div class="onboarding-body">
+        <div class="onboarding-card">
+            <h2>Tell us about yourself</h2>
+            <p>We'll personalize your learning experience based on your preferences.</p>
+
+            <!-- Full Name -->
+            <div class="selection-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" class="form-input" placeholder="Enter your name">
+            </div>
+
+            <!-- Year -->
+            <div class="selection-group">
+                <label>Year of Study</label>
+                <div class="selection-row">
+                    <button class="selection-btn" data-group="year" data-value="1st" onclick="toggleSelection(this, 'year')">1st Year</button>
+                    <button class="selection-btn" data-group="year" data-value="2nd" onclick="toggleSelection(this, 'year')">2nd Year</button>
+                    <button class="selection-btn" data-group="year" data-value="3rd" onclick="toggleSelection(this, 'year')">3rd Year</button>
+                    <button class="selection-btn" data-group="year" data-value="4th" onclick="toggleSelection(this, 'year')">4th Year</button>
+                </div>
+            </div>
+
+            <!-- Branch -->
+            <div class="selection-group">
+                <label>Branch</label>
+                <div class="selection-row">
+                    <button class="selection-btn" data-group="branch" data-value="CSE" onclick="toggleSelection(this, 'branch')">CSE</button>
+                    <button class="selection-btn" data-group="branch" data-value="IoT" onclick="toggleSelection(this, 'branch')">IoT</button>
+                    <button class="selection-btn" data-group="branch" data-value="ECE" onclick="toggleSelection(this, 'branch')">ECE</button>
+                    <button class="selection-btn" data-group="branch" data-value="ME" onclick="toggleSelection(this, 'branch')">ME</button>
+                </div>
+            </div>
+
+            <!-- Subjects (Multi-select) -->
+            <div class="selection-group">
+                <label>Subjects (Select all that apply)</label>
+                <div class="selection-row">
+                    <button class="selection-btn" data-group="subjects" data-value="Math" onclick="toggleSelection(this, 'subjects', true)">Math</button>
+                    <button class="selection-btn" data-group="subjects" data-value="Physics" onclick="toggleSelection(this, 'subjects', true)">Physics</button>
+                    <button class="selection-btn" data-group="subjects" data-value="Programming" onclick="toggleSelection(this, 'subjects', true)">Programming</button>
+                    <button class="selection-btn" data-group="subjects" data-value="Electronics" onclick="toggleSelection(this, 'subjects', true)">Electronics</button>
+                </div>
+            </div>
+
+            <!-- Study Time -->
+            <div class="selection-group">
+                <label>Daily Study Time</label>
+                <div class="selection-row">
+                    <button class="time-btn" data-group="study_time" data-value="30 min" onclick="toggleSelection(this, 'study_time')">30 min</button>
+                    <button class="time-btn" data-group="study_time" data-value="1hr" onclick="toggleSelection(this, 'study_time')">1 hr</button>
+                    <button class="time-btn" data-group="study_time" data-value="2hr" onclick="toggleSelection(this, 'study_time')">2 hr</button>
+                    <button class="time-btn" data-group="study_time" data-value="3hr+" onclick="toggleSelection(this, 'study_time')">3 hr+</button>
+                </div>
+            </div>
+
+            <!-- Goal -->
+            <div class="selection-group">
+                <label>Primary Goal</label>
+                <div class="selection-row">
+                    <button class="selection-btn" data-group="goal" data-value="Concepts" onclick="toggleSelection(this, 'goal')">Concepts</button>
+                    <button class="selection-btn" data-group="goal" data-value="Exams" onclick="toggleSelection(this, 'goal')">Exams</button>
+                    <button class="selection-btn" data-group="goal" data-value="Practice" onclick="toggleSelection(this, 'goal')">Practice</button>
+                    <button class="selection-btn" data-group="goal" data-value="Grades" onclick="toggleSelection(this, 'goal')">Grades</button>
+                </div>
+            </div>
+
+            <button class="primary-btn" onclick="saveOnboarding()">Continue →</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
