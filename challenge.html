@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Daily Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">Learn<span>Loop</span></a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="challenge.html">Challenge</a>
+                <a href="exam.html">Exam</a>
+                <a href="progress.html">Progress</a>
+                <div class="profile-wrapper">
+                    <div class="profile-circle" id="profileCircle" onclick="toggleProfileMenu()">S</div>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="progress.html">My Progress</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Challenge Body -->
+    <div class="challenge-body">
+        <div class="container">
+            <p class="small-heading">DAILY CHALLENGE</p>
+            <h1 class="page-title">Quiz Time ⚡</h1>
+
+            <!-- Quiz Container -->
+            <div class="quiz-container">
+                <!-- Info Bar -->
+                <div class="quiz-info-bar">
+                    <div class="quiz-info-item">
+                        <span class="quiz-info-icon">📚</span>
+                        <span>Mixed Subjects</span>
+                    </div>
+                    <div class="quiz-info-item">
+                        <span class="quiz-info-icon">❓</span>
+                        <span>5 Questions</span>
+                    </div>
+                    <div class="quiz-info-item">
+                        <span class="quiz-info-icon">⏱️</span>
+                        <span>5 Minutes</span>
+                    </div>
+                </div>
+
+                <!-- Quiz Card -->
+                <div class="quiz-card" id="quizCard">
+                    <div class="quiz-timer" id="timer">5:00</div>
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" id="progressFill" style="width:0%;"></div>
+                    </div>
+                    <p class="question-text" id="questionText"></p>
+                    <div class="options" id="optionsContainer"></div>
+                    <div class="quiz-actions">
+                        <button class="primary-btn" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+                    </div>
+                </div>
+
+                <!-- Result Card -->
+                <div class="result-card" id="resultCard" style="display:none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <span class="result-stat-value" id="finalScore">0/5</span>
+                            <span class="result-stat-label">Score</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value" id="correctCount">0</span>
+                            <span class="result-stat-label">Correct</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value" id="wrongCount">0</span>
+                            <span class="result-stat-label">Wrong</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-stat-value" id="accuracyValue">0%</span>
+                            <span class="result-stat-label">Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <a href="dashboard.html" class="secondary-btn">Back to Dashboard</a>
+                        <button class="primary-btn" onclick="location.reload()">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
