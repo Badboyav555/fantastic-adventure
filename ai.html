@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - AI Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">Learn<span>Loop</span></a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learn.html">Learn</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="challenge.html">Challenge</a>
+                <a href="exam.html">Exam</a>
+                <a href="progress.html">Progress</a>
+                <div class="profile-wrapper">
+                    <div class="profile-circle" id="profileCircle" onclick="toggleProfileMenu()">S</div>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="progress.html">My Progress</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Body -->
+    <div class="ai-body">
+        <div class="container">
+            <p class="small-heading">AI POWERED</p>
+            <h1 class="page-title">AI Study Assistant</h1>
+            <p class="page-subtitle">Ask me anything about your subjects!</p>
+
+            <div class="ai-card">
+                <!-- Subject Selector -->
+                <div class="ai-subject-selector">
+                    <label>Subject:</label>
+                    <select id="aiSubject" class="form-input" style="width:auto;">
+                        <option value="math">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="programming">Programming</option>
+                    </select>
+                </div>
+
+                <!-- Quick Questions -->
+                <div class="ai-quick-questions">
+                    <p class="small-heading">QUICK QUESTIONS</p>
+                    <div class="quick-question-buttons" style="margin-top:12px;">
+                        <button class="secondary-btn" onclick="fillQuestion('What is a matrix?')">What is a matrix?</button>
+                        <button class="secondary-btn" onclick="fillQuestion('Explain eigenvalues')">Explain eigenvalues</button>
+                        <button class="secondary-btn" onclick="fillQuestion('How do derivatives work?')">How do derivatives work?</button>
+                        <button class="secondary-btn" onclick="fillQuestion('Explain Newton&apos;s laws')">Explain Newton's laws</button>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="ai-input-area">
+                    <textarea id="aiQuestion" placeholder="Type your question here..." rows="4"></textarea>
+                    <button class="primary-btn" onclick="askLearnLoopAI()">Ask LearnLoop AI →</button>
+                </div>
+
+                <!-- Response -->
+                <div class="ai-response" id="aiResponse"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
